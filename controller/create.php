@@ -1,5 +1,6 @@
 <?php 
   include("../config/config.php");
+  include("../handle/redirect.php");
   $title=$_POST['title'];
   $price=$_POST['price'];
   $qty=$_POST['qty'];
@@ -12,4 +13,7 @@
   $sql="INSERT INTO `prodct_admin`(`prodcut_id`, `product_title`, `product_image`, `product_price`, `product_qty`, `product_status`) 
   VALUES (null,'$title','$img_name','$price','$qty','$status')";
   $con->query($sql);
+  if($sql){
+    redirect("../index.php");
+  }
  ?>

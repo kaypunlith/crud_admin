@@ -32,7 +32,7 @@
                 <div class="card-body pb-0 mt-2">
                   <h5 class="card-title">Top Selling <span>| Today</span></h5>
 
-                  <table class="table table-borderless align-middle mt-2">
+                  <table  class="table table-borderless align-middle table-striped table-hover">
                     <thead>
                       <tr>
                       <th scope="col">Product ID</th>
@@ -51,14 +51,14 @@
                                 ?>
                                    <tr>
                                     <td><?php echo $row[0]?></td>
-                                    <td scope="row"><a href="#"><img src="./public/image/<?php echo $row[2]?>"  class="rounded-2" height="70px" alt=""></a></td>
+                                    <td scope="row"><a href="#"><img src="./public/image/<?php echo $row[2]?>"  style="object-fit:cover" class="rounded-2" height="70px" width="70px" alt=""></a></td>
                                     <td><a href="#" class="text-primary fw-bold"><?php echo $row[1]?> </a></td>
                                     <td><?php echo $row[3]?> $</td>
                                     <td class="fw-bold"><?php echo $row[4]?> </td>
 
                                     <td>
                                         <button class="btn btn-warning rounded-0 text-light">Edit</button>
-                                        <button class="btn btn-danger rounded-0">Delete</button>
+                                        <button onclick="Delete_product(<?php echo $row[0]?>)" class="btn btn-danger rounded-0" data-bs-toggle="modal" data-bs-target="#model_del">Delete</button>
                                     </td>
                                 </tr>
                                 <?php
